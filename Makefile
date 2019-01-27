@@ -80,7 +80,7 @@ DOCKERIZE =
 # Implementation specific settings
 #
 
-IMPLS = ada awk bash basic c chuck clojure coffee common-lisp cpp crystal cs d dart \
+IMPLS = ada awk bash basic c chuck clojure clojure2 coffee common-lisp cpp crystal cs d dart \
 	elisp elixir elm erlang es6 factor fantom forth fsharp go groovy gnu-smalltalk \
 	guile haskell haxe hy io java js julia kotlin livescript logo lua make mal \
 	matlab miniMAL nasm nim objc objpascal ocaml perl perl6 php picolisp plpgsql \
@@ -156,6 +156,9 @@ basic_STEP_TO_PROG_qbasic = basic/$($(1))
 
 clojure_STEP_TO_PROG_clj  = clojure/target/$($(1)).jar
 clojure_STEP_TO_PROG_cljs = clojure/src/mal/$($(1)).cljc
+
+clojure2_STEP_TO_PROG_clj  = clojure/target/$($(1)).jar
+clojure2_STEP_TO_PROG_cljs = clojure/src/mal/$($(1)).cljc
 
 haxe_STEP_TO_PROG_neko   = haxe/$($(1)).n
 haxe_STEP_TO_PROG_python = haxe/$($(1)).py
