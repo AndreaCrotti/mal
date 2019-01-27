@@ -13,15 +13,19 @@
   [expr]
   (println expr))
 
+(defn REP
+  [s]
+  (-> s
+      READ
+      (EVAL {})
+      PRINT))
+
 (defn LOOP
   []
-  (while true
-    (print "user>")
-    (let [inp (read)
-          ast (READ inp)
-          ev (EVAL ast {})]
-
-      (PRINT ev))))
+  (let [line (read-line)]
+    (when line
+      (REP line)
+      (recur))))
 
 (defn -main [& args]
   (LOOP))
