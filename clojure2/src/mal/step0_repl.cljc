@@ -1,27 +1,27 @@
 (ns mal.step0-repl
   (:gen-class))
 
-(defn read
+(defn READ
   [s]
   s)
 
-(defn eval
+(defn EVAL
   [expr]
   expr)
 
-(defn print
+(defn PRINT
   [expr]
   (println expr))
 
-(defn loop
+(defn LOOP
   []
   (while true
-    (println "user>")
-    (let [inp (read-line)
-          parsed (read inp)
-          ev (eval parsed)]
+    (print "user>")
+    (let [inp (read)
+          parsed (READ inp)
+          ev (EVAL parsed)]
 
-      (print ev))))
+      (PRINT ev))))
 
 (defn -main [& args]
-  (loop))
+  (LOOP))
