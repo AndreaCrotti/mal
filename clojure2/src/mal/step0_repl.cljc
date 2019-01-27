@@ -6,8 +6,8 @@
   s)
 
 (defn EVAL
-  [expr]
-  expr)
+  [ast env]
+  ast)
 
 (defn PRINT
   [expr]
@@ -18,8 +18,8 @@
   (while true
     (print "user>")
     (let [inp (read)
-          parsed (READ inp)
-          ev (EVAL parsed)]
+          ast (READ inp)
+          ev (EVAL ast {})]
 
       (PRINT ev))))
 
